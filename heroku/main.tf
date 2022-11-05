@@ -26,15 +26,6 @@ resource "heroku_pipeline" "app_develop_pipeline" {
     name = var.heroku_pipeline_name
 }
 
-resource "heroku_app" "identity_develop" {
-    name = var.heroku_app_name
-    region = var.heroku_region
-    stack = "container"
-    config_vars = {
-        APP_ENV = var.heroku_app_environment
-    }
-}
-
 resource "heroku_app" "app_develop" {
     name = var.heroku_app_name
     region = var.heroku_region
